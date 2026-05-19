@@ -668,66 +668,61 @@
 
   <h1 class="exp-title">Expediente</h1>
 
-  <div class="exp-box exp-student">
-              <div class="col-lg-2 col-md-12 cubo2 text-center">
-                <img
-                  src="resources/images/perfil.jpg"
-                  alt="profile-image"
-                  class="rounded-circle"
-                  style="
-                    max-width: 100px;
-                    max-height: 100px;
-                    border-radius: 50%;
-                    border: 2px solid white;
-                    box-shadow: 3px 3px 20px rgb(0 0 0 / 50%);
-                  "
-                />
-              </div>
-
-    <div class="exp-info">
-
-      <div class="exp-label">Estudiante</div>
-      <div class="exp-value">[SR241040] María de los Ángeles Sáschez Rivas</div>
-
-      <div style="height:8px"></div>
-
-      <div class="row">
-        <div class="col-md-6">
-          <div class="exp-label">Carrera</div>
-          <div class="exp-value">
-           [202] Licenciatura en Ciencias de la Comunicación
-          </div>
-           <div class="exp-value">
-           [209] Licenciatura en Diseño Gráfico
-          </div>
+  <div class="row">
+            <div class="col-lg-2 col-md-12 cubo2 text-center">
+                <img src="resources/images/perfil.jpg" alt="profile-image" class="rounded-circle" style="max-width: 100px; max-height: 100px; border-radius: 50%; border: 2px solid white; box-shadow: 3px 3px 20px rgb(0 0 0 / 50%);">
+            </div>
+            <div class="col-lg-10 col-md-12">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <small>Estudiante</small>
+                                <h5>
+                                    [SR241040] María de los Ángeles
+                                    Sánchez Rivas
+                                </h5>
+                            </div>
+                        </div>
+                        <div class="row mt-1">
+                            <div class="w-100 table-responsive">
+                                <table id="_FichaAlumno_TBLCarreras" class="w-100 p-0" style="border-collapse: separate; border-spacing: 0 3px;">
+                                    <thead>
+                                        <tr>
+                                            <th style="font-weight:normal">Carrera</th>
+                                            <th style="font-weight:normal">Plan</th>
+                                            <th style="font-weight:normal">Programa</th>
+                                            <th style="font-weight:normal">Estado</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                            <tr data-carrera="202" data-plan="2024" class="highlight carrera active">
+                                                <td style="font-weight: 500">[202] Licenciatura en Ciencias de la Comunicación</td>
+                                                <td style="font-weight: 500 ">2024</td>
+                                                <td valign="middle" style="font-weight: 500 ">UDB</td>
+                                                <td valign="middle" style="font-weight: 500 ">ACTIVO</td>
+                                                <td valign="middle" style="font-weight: 500 ">
+                                                        <button class="btn btn-ver-udb btn-resize-udb" aria-hidden="true" data-bs-toggle="tooltip" title="" onclick="ActualizarExpediente(202, 2024)" data-bs-original-title="Ver" aria-label="Ver"><i class="fas fa-binoculars"></i></button>
+                                                </td>
+                                            </tr>
+                                            <tr data-carrera="209" data-plan="2024" class="highlight carrera ">
+                                                <td style="font-weight: 500">[209] Licenciatura en Diseño Gráfico</td>
+                                                <td style="font-weight: 500 ">2024</td>
+                                                <td valign="middle" style="font-weight: 500 ">UDB</td>
+                                                <td valign="middle" style="font-weight: 500 ">INACTIVO</td>
+                                                <td valign="middle" style="font-weight: 500 ">
+                                                        <button class="btn btn-ver-udb btn-resize-udb" aria-hidden="true" data-bs-toggle="tooltip" title="" onclick="ActualizarExpediente(209, 2024)" data-bs-original-title="Ver" aria-label="Ver"><i class="fas fa-binoculars"></i></button>
+                                                </td>
+                                            </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <div class="col-md-2">
-          <div class="exp-label">Plan</div>
-          <div class="exp-value">2024</div>
-          <div class="exp-value">2024</div>
-        </div>
-
-        <div class="col-md-2">
-          <div class="exp-label">Programa</div>
-          <div class="exp-value">UDB</div>
-          <div class="exp-value">UDB</div>
-        </div>
-
-        <div class="col-md-2">
-          <div class="exp-label">Estado</div>
-          <div class="exp-value">ACTIVO</div>
-          <div class="exp-value">INACTIVO</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="exp-status">
-      <div class="exp-status-box">
-        <i class="fas fa-binoculars"></i>
-      </div>
-    </div>
-  </div>
 
   <div class="exp-box">
 
@@ -765,7 +760,7 @@
        <div class="card text-white bg-warning mb-3 text-center">
                             <div class="card-header">
                                 <h1>
-                                    <span id="LBLRetiradas">4</span>
+                                    <span id="LBLRetiradas">3</span>
                                 </h1>
                             </div>
                             <div class="card-footer">
@@ -776,7 +771,7 @@
 
   
 
-        <div class="card card-udb mb-3">
+        <div class="card card-udb mb-3 text-center">
                             <div class="card-header">
                                 <h1>
                                     <span id="LBLEquivalencia">0</span>
@@ -787,7 +782,7 @@
                             </div>
                         </div>
     
-        <div class="card card-udb mb-3">
+        <div class="card card-udb mb-3 text-center">
                     <div class="card-header">
                         <h1>
                             <b><span id="LBLPorcentaje">17.6%</span></b>
