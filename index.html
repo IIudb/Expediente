@@ -479,477 +479,398 @@
         </div>
       </nav>
       <div class="container">
-        <h1 class="text-center mb-3">Notas</h1>
-
         <style>
-          .row.highlight:hover {
-            background-color: lightgrey;
-          }
+  .expediente-container {
+    width: 100%;
+    max-width: 1180px;
+    margin: 90px auto 30px auto;
+    font-family: Arial, Helvetica, sans-serif;
+  }
 
-          .row.highlight.active {
-            background-color: lightgray;
-          }
+  .exp-title {
+    text-align: center;
+    color: #1f4f79;
+    font-size: 42px;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
 
-          .row.highlight:hover {
-            cursor: default;
-          }
+  .exp-box {
+    background: white;
+    border: 1px solid #b7c7d1;
+    margin-bottom: 12px;
+  }
 
-          #_FichaAlumno_TBLCarreras .active {
-            background-color: #d3d3d3;
-          }
-        </style>
+  .exp-student {
+    display: grid;
+    grid-template-columns: 140px 1fr 100px;
+    align-items: center;
+    min-height: 105px;
+  }
 
-        <div class="card card-udb mb-3">
-          <div class="card-header">
-            <div class="row">
-              <div class="col-lg-2 col-md-12 cubo2 text-center">
-                <img
-                  src="resources/images/profile.jpeg"
-                  alt="profile-image"
-                  class="rounded-circle"
-                  style="
-                    max-width: 100px;
-                    max-height: 100px;
-                    border-radius: 50%;
-                    border: 2px solid white;
-                    box-shadow: 3px 3px 20px rgb(0 0 0 / 50%);
-                  "
-                />
-              </div>
-              <div class="col-lg-10 col-md-12">
-                <div class="row">
-                  <div class="col-lg-9">
-                    <div class="row">
-                      <div class="col-lg-12">
-                        <small>Estudiante</small>
-                        <h5>[SG231572] Ayleen Tatiana Santos García</h5>
-                      </div>
-                    </div>
-                    <div class="row mt-1">
-                      <div class="col-12">
-                        <small>Carrera</small>
-                        <h5 class="mt-1">
-                          [301] Licenciatura en Administración de Empresas
-                        </h5>
-                      </div>
-                      <div class="col-md-3 col-sm-6">
-                        <small>Campus</small>
-                        <h5 class="mt-1">Soyapango</h5>
-                      </div>
-                      <div class="col-md-3 col-sm-6">
-                        <small>Nombre de Programa:</small>
-                        <h5 class="mt-1">UDB</h5>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-3 ps-0 ms-0 text-center">
-                    <div class="row">
-                      <div class="col-lg-4 col-md-4 col-sm-4 col-4">
-                        <small>Plan</small>
-                        <h5 class="mt-1">2023</h5>
-                      </div>
-                      <div class="col-lg-3 col-md-3 col-sm-3 col-3 px-0">
-                        <small>CUM</small>
-                        <h5 class="mt-1">8.71</h5>
-                      </div>
-                      <div class="col-lg-5 col-md-5 col-sm-5 col-5 ps-0">
-                        <small>Avance</small>
-                        <h5 class="mt-1">45.6 %</h5>
-                      </div>
-                    </div>
-                    <div class="row mt-1">
-                      <div class="col-lg-6 col-md-6 col-sm-6 col-6">
-                        <small>Máximo UV</small>
-                        <h5 class="mt-1">25</h5>
-                      </div>
-                      <div class="col-lg-6 col-md-6 col-sm-6 col-6 px-0">
-                        <small>UV Inscritas</small>
-                        <h5 class="mt-1" id="LBUVInscritas">20</h5>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+  .exp-photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .exp-photo img {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    border: 4px solid #dce4ea;
+    box-shadow: 0 0 6px rgba(0,0,0,.25);
+    object-fit: cover;
+  }
+
+  .exp-info {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .exp-label {
+    font-size: 11px;
+    color: #6d7f89;
+    font-weight: bold;
+  }
+
+  .exp-value {
+    color: #2c5877;
+    font-weight: bold;
+  }
+
+  .exp-status {
+    border-left: 1px solid #d8e1e7;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .exp-status-box {
+    width: 26px;
+    height: 26px;
+    background: #dfe7ed;
+    border-radius: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .exp-section-title {
+    height: 44px;
+    border-bottom: 1px solid #b7c7d1;
+    display: flex;
+    align-items: center;
+    padding-left: 12px;
+    color: #2b5877;
+    font-size: 22px;
+    font-weight: bold;
+  }
+
+  .exp-body {
+    padding: 12px;
+  }
+
+  .exp-stats {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+    margin-bottom: 10px;
+  }
+
+  .exp-stat {
+    height: 92px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2px;
+    color: white;
+    font-weight: bold;
+  }
+
+  .green-box { background: #1f9854; }
+  .red-box { background: #dd3246; }
+  .yellow-box { background: #f0b400; }
+
+  .white-box {
+    background: white;
+    color: #1f4f79;
+    border: 1px solid #d8e1e7;
+  }
+
+  .exp-number {
+    font-size: 30px;
+    margin-bottom: 5px;
+  }
+
+  .exp-text {
+    font-size: 11px;
+  }
+
+  .exp-summary {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+  }
+
+  .exp-summary th {
+    background: #11a7d4;
+    color: white;
+    padding: 9px;
+    border: 1px solid #71cce8;
+  }
+
+  .exp-summary td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #dce5ea;
+    font-weight: bold;
+  }
+
+  .exp-reqs {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .exp-req {
+    background: #dd3246;
+    color: white;
+    height: 56px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  .exp-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 11px;
+  }
+
+  .exp-table th {
+    background: #11a7d4;
+    color: white;
+    padding: 9px 5px;
+    border: 1px solid #6fcbe7;
+  }
+
+  .exp-table td {
+    border: 1px solid #e0e7eb;
+    padding: 6px;
+    background: white;
+  }
+
+  .exp-table tr:nth-child(even) td {
+    background: #fafcfd;
+  }
+
+  .left {
+    text-align: left;
+  }
+</style>
+
+<div class="expediente-container">
+
+  <h1 class="exp-title">Expediente</h1>
+
+  <div class="exp-box exp-student">
+
+    <div class="exp-photo">
+      <img src="resources/images/profile.jpeg">
+    </div>
+
+    <div class="exp-info">
+
+      <div class="exp-label">Estudiante</div>
+      <div class="exp-value">[VO231610] Néstor Eduardo Villalobos Orellana</div>
+
+      <div style="height:8px"></div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="exp-label">Carrera</div>
+          <div class="exp-value">
+            [104] Ingeniería en Ciencias de la Computación
           </div>
         </div>
 
-        <nav class="navbar mt-3 navbar-udb navbar-expand test">
-          <div class="collapse navbar-collapse" style="height: 54px">
-            <ul class="nav navbar-nav me-auto">
-              <li class="nav-item">
-                <form class="d-flex">
-                  <label class="mt-2 ms-3 me-3">Ciclo:</label>
-                  <select
-                    class="form-control chosen-select"
-                    data-placeholder="Seleccione una opción"
-                    id="DDLModulo"
-                    name="DDLModulo"
-                  >
-                    <option selected="selected" value="01 2024">02 2025</option>
-                    <option value="02 2024">02 2024</option>
-                    <option value="03 2023">03 2023</option>
-                    <option value="02 2023">02 2023</option>
-                    <option value="01 2023">01 2023</option>
-                    <option value="03 2022">03 2022</option>
-                    <option value="02 2022">02 2022</option>
-                    <option value="01 2022">01 2022</option>
-                    <option value="03 2021">03 2021</option>
-                    <option value="02 2021">02 2021</option>
-                    <option value="01 2021">01 2021</option>
-                    <option value="03 2020">03 2020</option>
-                    <option value="02 2020">02 2020</option>
-                    <option value="01 2020">01 2020</option>
-                    <option value="03 2019">03 2019</option>
-                    <option value="02 2019">02 2019</option>
-                    <option value="01 2019">01 2019</option>
-                    <option value="03 2018">03 2018</option>
-                    <option value="02 2018">02 2018</option>
-                    <option value="01 2018">01 2018</option>
-                    <option value="03 2017">03 2017</option>
-                    <option value="02 2017">02 2017</option>
-                    <option value="01 2017">01 2017</option>
-                    <option value="03 2016">03 2016</option>
-                    <option value="02 2016">02 2016</option>
-                    <option value="01 2016">01 2016</option>
-                    <option value="03 2015">03 2015</option>
-                    <option value="02 2015">02 2015</option>
-                    <option value="01 2015">01 2015</option>
-                    <option value="03 2014">03 2014</option>
-                    <option value="02 2014">02 2014</option>
-                    <option value="01 2014">01 2014</option>
-                    <option value="03 2013">03 2013</option>
-                    <option value="02 2013">02 2013</option>
-                    <option value="01 2013">01 2013</option>
-                    <option value="03 2012">03 2012</option>
-                    <option value="02 2012">02 2012</option>
-                    <option value="01 2012">01 2012</option>
-                    <option value="03 2011">03 2011</option>
-                    <option value="02 2011">02 2011</option>
-                    <option value="01 2011">01 2011</option>
-                    <option value="03 2010">03 2010</option>
-                    <option value="02 2010">02 2010</option>
-                    <option value="01 2010">01 2010</option>
-                    <option value="03 2009">03 2009</option>
-                    <option value="02 2009">02 2009</option>
-                    <option value="01 2009">01 2009</option>
-                    <option value="03 2008">03 2008</option>
-                    <option value="02 2008">02 2008</option>
-                    <option value="01 2008">01 2008</option>
-                    <option value="03 2007">03 2007</option>
-                    <option value="02 2007">02 2007</option>
-                    <option value="01 2007">01 2007</option>
-                    <option value="03 2006">03 2006</option>
-                    <option value="02 2006">02 2006</option>
-                    <option value="01 2006">01 2006</option>
-                    <option value="03 2005">03 2005</option>
-                    <option value="02 2005">02 2005</option>
-                    <option value="01 2005">01 2005</option>
-                    <option value="03 2004">03 2004</option>
-                    <option value="02 2004">02 2004</option>
-                    <option value="01 2004">01 2004</option>
-                    <option value="03 2003">03 2003</option>
-                    <option value="02 2003">02 2003</option>
-                    <option value="01 2003">01 2003</option>
-                    <option value="03 2002">03 2002</option>
-                    <option value="02 2002">02 2002</option>
-                    <option value="01 2002">01 2002</option>
-                    <option value="03 2001">03 2001</option>
-                    <option value="02 2001">02 2001</option>
-                    <option value="01 2001">01 2001</option>
-                    <option value="03 2000">03 2000</option>
-                    <option value="02 2000">02 2000</option>
-                    <option value="01 2000">01 2000</option>
-                    <option value="03 1999">03 1999</option>
-                    <option value="02 1999">02 1999</option>
-                    <option value="01 1999">01 1999</option>
-                    <option value="03 1998">03 1998</option>
-                    <option value="02 1998">02 1998</option>
-                    <option value="01 1998">01 1998</option>
-                    <option value="03 1997">03 1997</option>
-                    <option value="02 1997">02 1997</option>
-                    <option value="01 1997">01 1997</option>
-                    <option value="03 1996">03 1996</option>
-                    <option value="02 1996">02 1996</option>
-                    <option value="01 1996">01 1996</option>
-                    <option value="03 1995">03 1995</option>
-                    <option value="02 1995">02 1995</option>
-                    <option value="01 1995">01 1995</option>
-                    <option value="03 1994">03 1994</option>
-                    <option value="02 1994">02 1994</option>
-                    <option value="01 1994">01 1994</option>
-                    <option value="03 1993">03 1993</option>
-                    <option value="02 1993">02 1993</option>
-                    <option value="01 1993">01 1993</option>
-                    <option value="03 1992">03 1992</option>
-                    <option value="02 1992">02 1992</option>
-                    <option value="01 1992">01 1992</option>
-                    <option value="03 1991">03 1991</option>
-                    <option value="02 1991">02 1991</option>
-                    <option value="01 1991">01 1991</option>
-                    <option value="03 1990">03 1990</option>
-                    <option value="02 1990">02 1990</option>
-                    <option value="01 1990">01 1990</option>
-                    <option value="03 1989">03 1989</option>
-                    <option value="02 1989">02 1989</option>
-                    <option value="01 1989">01 1989</option>
-                    <option value="03 1988">03 1988</option>
-                    <option value="02 1988">02 1988</option>
-                    <option value="01 1988">01 1988</option>
-                    <option value="03 1987">03 1987</option>
-                    <option value="02 1987">02 1987</option>
-                    <option value="01 1987">01 1987</option>
-                    <option value="03 1986">03 1986</option>
-                    <option value="02 1986">02 1986</option>
-                    <option value="01 1986">01 1986</option>
-                  </select>
-                </form>
-              </li>
-            </ul>
-
-            <ul class="nav navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link">
-                  <i class="fas fa-file-pdf"></i>&nbsp;Manual
-                </a>
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link"
-                  href="#"
-                  data-bs-toggle="modal"
-                  data-bs-target="#modalFAQ"
-                >
-                  <i class="fas fa-question"></i>&nbsp;FAQ
-                </a>
-              </li>
-            </ul>
-          </div>
-        </nav>
-
-        <div
-          class="modal fade"
-          id="modalFAQ"
-          tabindex="-1"
-          role="dialog"
-          aria-labelledby="modalFAQLabel"
-          aria-hidden="true"
-        >
-          <div class="modal-dialog modal-xl modal-dialog-centered">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="modalFAQLabel">
-                  Preguntas Frecuentes
-                </h5>
-                <button
-                  type="button"
-                  class="btn-close"
-                  data-bs-dismiss="modal"
-                  aria-label="Close"
-                ></button>
-              </div>
-              <div class="m-2">
-                <div class="d-flex flex-row flex-row-info">
-                  <div class="p-2 flex-row-info-box">
-                    <i class="fas fa-info-circle fa-2x"></i>
-                  </div>
-                  <div class="pt-3 px-3">
-                    <p>
-                      Antes de crear un ticket se le recomienda que consulte las
-                      preguntas frecuentes.
-                    </p>
-                  </div>
-                </div>
-                <div class="p-3">
-                  <div
-                    class="shadow-lg mb-3 bg-white rounded"
-                    id="accordionPanelsStayOpenExample"
-                  >
-                    <div class="accordion-item">
-                      <h2 class="accordion-header" id="8">
-                        <button
-                          class="accordion-button collapsed"
-                          type="button"
-                          data-bs-toggle="collapse"
-                          data-bs-target="#collapseOne-8"
-                          aria-expanded="true"
-                          aria-controls="panelsStayOpen-collapseOne"
-                        >
-                          &#191;Qu&#233; pasa si no aparecen mis notas?
-                        </button>
-                      </h2>
-                      <div
-                        id="collapseOne-8"
-                        class="accordion-collapse collapse"
-                        aria-labelledby="8"
-                      >
-                        <div class="accordion-body">
-                          <p>
-                            Primero debes consultar con tu Docente, si ya subió
-                            las notas al portal.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="modal-footer justify-content-center">
-                <button
-                  type="button"
-                  class="btn btn-cancelar-udb"
-                  data-bs-dismiss="modal"
-                >
-                  Cancelar
-                </button>
-              </div>
-            </div>
-          </div>
+        <div class="col-md-2">
+          <div class="exp-label">Plan</div>
+          <div class="exp-value">2023</div>
         </div>
 
-        <div id="divNotasFinales">
-          <div class="card card-udb mb-3">
-            <div class="card-header">
-              <h4>Módulos inscritos</h4>
-            </div>
-            <table class="table table-udb table-bordered table-hover">
-              <thead>
-                <tr class="text-center">
-                  <th>C&oacute;digo</th>
-                  <th>Asignatura</th>
-                  <th>Mat.</th>
-                  <th>NF</th>
-                  <th>Resultado</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr data-codigo="ANF231">
-                  <td class="text-center">LEL303</td>
-                  <td>Legislación Laboral</td>
-                  <td class="text-center">1</td>
-                  <td class="text-center">
-                    <a class="btn btn-link btn-sm pt-0" href="https://iiudb.github.io/-admacad.udb.edu.sv-EstudiantesPlus-LEL303/"><strong>
-                        8.9
-                        </strong></a>
-                        </td>
-                  <td class="text-center">Aprobado</td>
-                </tr>
-                <tr data-codigo="QUG501">
-                  <td class="text-center">MEM501</td>
-                  <td>Marketing Empresarial</td>
-                  <td class="text-center">1</td>
-                  <td class="text-center">
-                    <a class="btn btn-link btn-sm pt-0" href="https://iiudb.github.io/admacad.udb.edu.sv-EstudiantesPlus-MEM501-/"><strong>
-                        8.4
-                        </strong></a>
-                        </td>
-                  <td class="text-center">Aprobado</td>
-                </tr>
-                <tr data-codigo="CAD501">
-                  <td class="text-center">MFN301</td>
-                  <td>Matemática Financiera</td>
-                  <td class="text-center">1</td>
-                  <td class="text-center">
-                    <a class="btn btn-link btn-sm pt-0" href="https://iiudb.github.io/-admacad.udb.edu.sv-EstudiantesPlus-MFN301/"><strong>
-                        7.9
-                        </strong></a>
-                        </td>
-                  <td class="text-center">Aprobado</td>
-                </tr>
-                <tr data-codigo="PRE104">
-                  <td class="text-center">MEC301</td>
-                  <td>Macroeconomía</td>
-                  <td class="text-center">1</td>
-                  <td class="text-center">
-                    <a class="btn btn-link btn-sm pt-0" href="https://iiudb.github.io/IIudb--admacad.udb.edu.sv-EstudiantesPlus-MEC301/"><strong>
-                        8.7
-                        </strong></a>
-                        </td>
-                  <td class="text-center">Aprobado</td>
-                </tr>
-
-                <tr data-codigo="PRE104">
-                  <td class="text-center">PIO301</td>
-                  <td>Psicología Individual para la Gestión Organizacional</td>
-                  <td class="text-center">1</td>
-                  <td class="text-center">
-                    <a class="btn btn-link btn-sm pt-0" href="https://iiudb.github.io/-admacad.udb.edu.sv-EstudiantesPlus-PIO301-/"><strong>
-                        9.1
-                        </strong></a>
-                        </td>
-                  <td class="text-center">Aprobado</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-        <div id="divNotasFinales">
-          <div class="card card-udb mb-3">
-            <div class="card-header">
-              <h4>Psicología Individual para la Gestión Organizacional</h4>
-            </div>
-            <table class="table table-udb table-bordered table-hover">
-              <thead>
-                <tr class="text-center">
-                  <th>Actividad</th>
-                  <th>Calificación</th>
-                  <th>Porcentaje</th>
-                  <th>Nota Global</th>
-                
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                    <td>Primer Taller de Clase, La actividad evaluada se realizará de manera presencial en el campus de la universidad.</td>
-                    <td class="text-center">9.00</td>
-                    <td class="text-center">10.00 %</td>
-                    <td class="text-center">0.90000</td>
-                </tr>
-                <tr>
-                    <td>Primer Examen Parcial se realizará de manera presencial en el campus de la universidad.</td>
-                    <td class="text-center">7.600</td>
-                    <td class="text-center">20.00 %</td>
-                    <td class="text-center">1.52000</td>
-                </tr>
-                <tr>
-                    <td>Segundo Taller de Clase, La actividad evaluada se realizará de manera presencial en el campus de la universidad.</td>
-                    <td class="text-center">9.40</td>
-                    <td class="text-center">10.00 %</td>
-                    <td class="text-center">0.94000</td>
-                </tr>
-                <tr>
-                    <td>Tercer Taller de Clase, La actividad evaluada se realizará de manera presencial en el campus de la universidad.</td>
-                    <td class="text-center">9.00</td>
-                    <td class="text-center">10.00 %</td>
-                    <td class="text-center">0.90000</td>
-                </tr>
-                <tr>
-                    <td>Segundo Examen Parcial se realizará de manera presencial en el campus de la universidad.</td>
-                    <td class="text-center">7.67</td>
-                    <td class="text-center">20.00 %</td>
-                    <td class="text-center">1.53000</td>
-                </tr>
-                <tr>
-                    <td>Cuarto Taller de Clase, La actividad evaluada se realizará de manera presencial en el campus de la universidad.</td>
-                    <td class="text-center">9.00</td>
-                    <td class="text-center">10.00 %</td>
-                    <td class="text-center">0.90000</td>
-                </tr>
-                <tr>
-                    <td>Tercer Examen Parcial se realizará de manera presencial en el campus de la universidad.</td>
-                    <td class="text-center">7.70</td>
-                    <td class="text-center">20.00 %</td>
-                    <td class="text-center">1.54000</td>
-                </tr>
-        </tbody>
-            </table>
-          </div>
+        <div class="col-md-2">
+          <div class="exp-label">Programa</div>
+          <div class="exp-value">UDB</div>
         </div>
 
-
-            <div id="divNotasAsignatura"></div>
+        <div class="col-md-2">
+          <div class="exp-label">Estado</div>
+          <div class="exp-value">ACTIVO</div>
+        </div>
       </div>
-    </main>
+    </div>
+
+    <div class="exp-status">
+      <div class="exp-status-box">
+        <i class="fas fa-binoculars"></i>
+      </div>
+    </div>
+  </div>
+
+  <div class="exp-box">
+
+    <div class="exp-section-title">
+      Ingeniería en Ciencias de la Computación
+    </div>
+
+    <div class="exp-body">
+
+      <div class="exp-stats">
+
+        <div class="exp-stat green-box">
+          <div class="exp-number">21</div>
+          <div class="exp-text">APROBADAS</div>
+        </div>
+
+        <div class="exp-stat red-box">
+          <div class="exp-number">2</div>
+          <div class="exp-text">REPROBADAS</div>
+        </div>
+
+        <div class="exp-stat yellow-box">
+          <div class="exp-number">6</div>
+          <div class="exp-text">RETIRADAS</div>
+        </div>
+
+        <div class="exp-stat white-box">
+          <div class="exp-number">0</div>
+          <div class="exp-text">EQUIVALENCIAS</div>
+        </div>
+
+        <div class="exp-stat white-box">
+          <div class="exp-number">50.9%</div>
+          <div class="exp-text">PORCENTAJE DE AVANCE</div>
+        </div>
+
+      </div>
+
+      <table class="exp-summary">
+        <tr>
+          <th>Ciclo Ingreso:</th>
+          <th>Nota Promedio:</th>
+          <th>CUM:</th>
+          <th>U.V. Ganadas:</th>
+          <th>Máximo U.V.:</th>
+        </tr>
+
+        <tr>
+          <td>01 2023</td>
+          <td>7.50</td>
+          <td>7.60</td>
+          <td>82</td>
+          <td>32</td>
+        </tr>
+      </table>
+
+    </div>
+  </div>
+
+  <div class="exp-box">
+
+    <div class="exp-section-title">
+      Requisitos de Graduación
+    </div>
+
+    <div class="exp-reqs">
+
+      <div class="exp-req">Trabajo de Graduación</div>
+      <div class="exp-req">Segundo Idioma</div>
+      <div class="exp-req">Servicio Social</div>
+      <div class="exp-req">Práctica Profesional</div>
+
+      <div class="exp-req">Título Original de Bachiller</div>
+      <div class="exp-req">Solvencia de Biblioteca</div>
+      <div class="exp-req">Pago de Gastos de Graduación</div>
+      <div class="exp-req">Fotocopia de DUI</div>
+
+      <div class="exp-req">Partida de Nacimiento</div>
+      <div class="exp-req">Registro de Título Universitario</div>
+
+    </div>
+  </div>
+
+  <div class="exp-box">
+
+    <div class="exp-section-title">
+      Consolidado de Materias
+    </div>
+
+    <table class="exp-table">
+
+      <thead>
+        <tr>
+          <th>Año</th>
+          <th>Ciclo</th>
+          <th>Código</th>
+          <th>Asignatura</th>
+          <th>Mat.</th>
+          <th>Nota</th>
+          <th>Resultado</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <tr>
+          <td>2023</td>
+          <td>01</td>
+          <td>CAD501</td>
+          <td class="left">Cálculo Diferencial</td>
+          <td>1</td>
+          <td>6.4</td>
+          <td>Aprobada</td>
+        </tr>
+
+        <tr>
+          <td>2023</td>
+          <td>01</td>
+          <td>ANF231</td>
+          <td class="left">Antropología Filosófica</td>
+          <td>1</td>
+          <td>8.8</td>
+          <td>Aprobada</td>
+        </tr>
+
+        <tr>
+          <td>2023</td>
+          <td>01</td>
+          <td>PRE104</td>
+          <td class="left">Programación Estructurada</td>
+          <td>1</td>
+          <td>9.3</td>
+          <td>Aprobada</td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+</div>
+          
+
+        
+  
 
     <div class="card" style="background-color: #ebebec">
       <div class="card-header">
